@@ -1,141 +1,378 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Connie Zhang | Finance Portfolio</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f9fc;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f7f9fc;
       color: #263449;
       line-height: 1.7;
     }
+
     header {
-      background: #152d4b;
+      background: linear-gradient(135deg, #10243d, #254d78);
       color: white;
-      padding: 75px 20px;
+      padding: 90px 20px;
       text-align: center;
     }
-    header h1 { font-size: 42px; margin: 0; }
-    header p { font-size: 18px; color: #dce6f3; }
+
+    header h1 {
+      font-size: 44px;
+      margin: 0 0 12px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 19px;
+      color: #dce6f3;
+      margin: 8px 0;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #c4d6e9;
+      margin-top: 18px;
+    }
+
     nav {
-      background: white;
-      padding: 16px;
+      background-color: white;
+      padding: 18px;
       text-align: center;
       border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
+
     nav a {
       color: #152d4b;
-      margin: 0 15px;
+      margin: 0 18px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 15px;
     }
-    main { max-width: 950px; margin: auto; padding: 35px 20px; }
-    section { margin-bottom: 50px; }
+
+    nav a:hover {
+      color: #3974b7;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 45px 24px;
+    }
+
+    section {
+      margin-bottom: 65px;
+      scroll-margin-top: 85px;
+    }
+
     h2 {
       color: #152d4b;
+      font-size: 27px;
       border-bottom: 2px solid #d9e3f0;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
+      margin-bottom: 25px;
     }
-    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .about-text {
+      font-size: 17px;
+      max-width: 850px;
+      color: #42536a;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
     .skill {
       background: #e4edf8;
-      padding: 10px 17px;
-      border-radius: 20px;
+      color: #17385c;
+      padding: 11px 19px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 500;
+      border: 1px solid #d3e1f2;
     }
+
     .project {
       background: white;
-      padding: 23px;
-      margin: 18px 0;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+      padding: 30px;
+      margin-bottom: 24px;
+      border-radius: 14px;
+      border: 1px solid #e8edf4;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .project h3 { color: #152d4b; margin-top: 0; }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.09);
+    }
+
+    .project h3 {
+      color: #152d4b;
+      font-size: 21px;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .project-info {
+      color: #52769c;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .project p {
+      color: #42536a;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      background: #f0f4f9;
+      color: #385b80;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
     footer {
       background: #152d4b;
       color: white;
       text-align: center;
-      padding: 22px;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 65px 15px;
+      }
+
+      header h1 {
+        font-size: 34px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      main {
+        padding: 30px 16px;
+      }
+
+      .project {
+        padding: 22px;
+      }
+
+      h2 {
+        font-size: 23px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Connie Zhang</h1>
-  <p>Finance Student | Rutgers Business School</p>
-</header>
+  <!-- HEADER -->
+  <header>
+    <h1>Connie Zhang</h1>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-</nav>
+    <p>Finance Student | Rutgers Business School</p>
 
-<main>
-  <section id="about">
-    <h2>Personal Statement</h2>
-    <p>
-      I am a Finance student at Rutgers Business School
-      with a strong interest in financial analysis,
-      investment strategies, and business development.
+    <p class="subtitle">
+      Financial Analysis | Investment Research |
+      Business Development
     </p>
-  </section>
+  </header>
 
-  <section id="skills">
-    <h2>Professional Skills</h2>
-    <div class="skills">
-      <span class="skill">Financial Analysis</span>
-      <span class="skill">Microsoft Excel</span>
-      <span class="skill">Market Research</span>
-      <span class="skill">Financial Modeling</span>
-      <span class="skill">Investment Analysis</span>
-      <span class="skill">Business Development</span>
-      <span class="skill">Communication</span>
-      <span class="skill">Teamwork</span>
-    </div>
-  </section>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+  </nav>
 
-  <section id="projects">
-    <h2>Projects & Experience</h2>
+  <main>
 
-    <div class="project">
-      <h3>Plug and Play China Internship</h3>
-      <p>
-        Conducted market research and supported startup
-        scouting in the mobility and energy sectors.
-        Explored emerging technologies and evaluated
-        business opportunities.
+    <!-- PERSONAL STATEMENT -->
+    <section id="about">
+
+      <h2>About Me</h2>
+
+      <p class="about-text">
+        I am a Finance student at Rutgers Business School
+        with a strong interest in financial analysis,
+        investment strategies, and business development.
       </p>
-    </div>
 
-    <div class="project">
-      <h3>Financial Analysis Coursework</h3>
-      <p>
-        Applied financial concepts to examine market
-        trends, investment decisions, and financial
-        performance through academic coursework.
-      </p>
-    </div>
+    </section>
 
-    <div class="project">
-      <h3>Unity For Equality Internship</h3>
-      <p>
-        Gained practical exposure to finance-related
-        operations and organizational processes
-        through a professional internship.
-      </p>
-    </div>
-  </section>
-</main>
+    <!-- SKILLS -->
+    <section id="skills">
 
-<footer>
-  <p>Connie Zhang | Personal Portfolio</p>
-</footer>
+      <h2>Professional Skills</h2>
+
+      <div class="skills">
+
+        <span class="skill">Financial Analysis</span>
+
+        <span class="skill">Microsoft Excel</span>
+
+        <span class="skill">Market Research</span>
+
+        <span class="skill">Financial Modeling</span>
+
+        <span class="skill">Investment Analysis</span>
+
+        <span class="skill">Business Development</span>
+
+        <span class="skill">Communication</span>
+
+        <span class="skill">Teamwork</span>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+      <h2>Projects & Experience</h2>
+
+      <!-- PROJECT ONE -->
+      <div class="project">
+
+        <h3>Startup Scouting & Market Research</h3>
+
+        <div class="project-info">
+          Plug and Play China | Summer 2026
+        </div>
+
+        <p>
+          Conducted industry research and startup scouting
+          across mobility, energy, and emerging technology
+          sectors. Examined AI-powered industrial solutions,
+          automation technologies, and sensor applications.
+          Researched startup business models, competitive
+          positioning, and potential commercial applications
+          to better understand market opportunities.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Market Research</span>
+          <span class="tag">Startup Scouting</span>
+          <span class="tag">Industry Analysis</span>
+          <span class="tag">Business Development</span>
+        </div>
+
+      </div>
+
+      <!-- PROJECT TWO -->
+      <div class="project">
+
+        <h3>Corporate Valuation & Financial Modeling</h3>
+
+        <div class="project-info">
+          Rutgers Business School | Corporate Finance
+        </div>
+
+        <p>
+          Studied corporate valuation methods, including
+          discounted cash flow (DCF) analysis and financial
+          modeling. Explored how projected cash flows,
+          discount rates, and growth assumptions influence
+          company valuations. Developed an understanding
+          of how financial models support investment
+          analysis and corporate decision-making.
+        </p>
+
+        <div class="tags">
+          <span class="tag">DCF Analysis</span>
+          <span class="tag">Financial Modeling</span>
+          <span class="tag">Corporate Finance</span>
+          <span class="tag">Valuation</span>
+        </div>
+
+      </div>
+
+      <!-- PROJECT THREE -->
+      <div class="project">
+
+        <h3>Global Capital Markets Analysis</h3>
+
+        <div class="project-info">
+          Rutgers Business School | Global Capital Markets
+        </div>
+
+        <p>
+          Examined the structure and functions of global
+          financial markets, including equities, fixed
+          income, derivatives, and foreign exchange.
+          Analyzed the relationship between interest rates,
+          bond prices, credit risk, and market liquidity.
+          Explored how economic conditions and financial
+          instruments influence investment decisions.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Capital Markets</span>
+          <span class="tag">Fixed Income</span>
+          <span class="tag">Investment Research</span>
+          <span class="tag">Financial Markets</span>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Connie Zhang | Personal Portfolio</p>
+    <p>Rutgers Business School</p>
+  </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
